@@ -1,9 +1,9 @@
-\name{buttap}
+\name{Poles and zeros}
 \alias{buttap}
 \alias{besselap}
 \alias{cheb1ap}
 \alias{cheb2ap}
-\title{Calculate Poles and Zeros}
+\title{Calculate poles, zeros, and gain for various filters.}
 \description{
   \code{buttap} returns the poles, zeros, and gain of the n-th order
   normalized prototype Butterworth analog lowpass filter;

@@ -1,11 +1,13 @@
 \name{rtrend}
 \alias{rtrend}
-\title{Remove linear trend}
+\alias{rmean}
+\title{Remove linear trend or mean}
 \description{
-  Removes the linear trend from SAC data.
+  Removes the linear trend or mean from SAC data.
 }
 \usage{
 rtrend(s)
+rmean(s)
 }
 \arguments{
   \item{s}{a vector of SAC data.}

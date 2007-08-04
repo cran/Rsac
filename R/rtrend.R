@@ -7,4 +7,11 @@ rtrend <- function(s){
   return(s)
 }
 
+rmean <- function(s){
+  for(i in 1:length(s))
+    s[[i]]$x <- s[[i]]$x - mean(s[[i]]$x)
+  return(s)
+}
+
+
 
