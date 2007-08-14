@@ -36,7 +36,7 @@
   getnpts <- function(X)
     X$N
   npts <- sapply(X = s, getnpts)
-  num2start <- round((max(bs) - bs)/deltas[1], 0) + 1
+  num2start <- round((max(bs) - bs)/deltas[1], 0) #+ 1
   adjnpts <- min(npts - num2start)
   if(adjnpts < 1)
     stop("Components do not overlap in time.")

@@ -46,12 +46,8 @@ section(x, dist = NULL, vertdist = TRUE, ampnorm = TRUE, mfactor = 1,
   \item{lon}{longitude defining the path.}
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
-}
 \examples{
-
 data(sumatra)
-
 section(sumatra)
-
 }
 \keyword{}

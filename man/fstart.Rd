@@ -4,7 +4,7 @@
 \alias{minx}
 \title{SAC array values}
 \description{
-  Calculates the starting time, the max, and the min values of \code{x}
+  Calculates the starting time, the max, and the min values of \code{X}
   for a vector of SAC files.
 }
 \usage{
@@ -13,12 +13,12 @@ maxx(X)
 minx(X)
 }
 \arguments{
-  \item{X}{an object of class \code{"rsac"}.}
+  \item{X}{an object of class \code{rsac}.}
 }
 \value{the max, min, or starting time.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{
-# Used by \code{plot.rsac}
+# Used by "plot.rsac"
 }
 \keyword{internal}

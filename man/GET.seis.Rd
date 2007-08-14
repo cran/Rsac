@@ -12,7 +12,7 @@ testgetseis(GG)
 }
 \arguments{
   \item{fnames}{list of file names.}
-  \item{kind}{an integer {1, 2, 3}; 1 = segy, 2 = sac, 3 = AH.}
+  \item{kind}{an integer (1:3); 1 = segy, 2 = sac, 3 = AH.}
   \item{PLOT}{logical, for if the traces should be plotted.}
   \item{GG}{a list returned by \code{GET.seis}.}
 }

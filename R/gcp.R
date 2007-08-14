@@ -31,7 +31,8 @@
   
   # Now calculate the lats/lons of the path
   #    for display purposes
-  Rearth <- 6372795
+  Rearth <- 6372795 # for m
+#  Rearth <- 6272.75
   n <- 1000
   dist <- a * Rearth
   Dd <- seq(from = 0, to = dist, length = n) / Rearth
