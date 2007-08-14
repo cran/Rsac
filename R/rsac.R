@@ -25,7 +25,7 @@ rsac <- function(files, endian = .Platform$endian)
     h4 <- readBin(con = zz, what = character(), n = 1, size = 4,
                   endian = endian[i])
     # Define header variables:
-    delta <- h1[1, 1]
+    dt <- h1[1, 1]
     depmin <- h1[1, 2]
     depmax <- h1[1, 3]
     scale <- h1[1, 4]
@@ -58,7 +58,7 @@ rsac <- function(files, endian = .Platform$endian)
     nzmsec <- h2[2, 1]
     norid <- h2[2, 3]
     nevid <- h2[2, 4]
-    npts <- h2[2, 5]
+    N <- h2[2, 5]
     idep <- h2[4, 2]
     iztype <- h2[4, 3]
     leven <- h3[1]
@@ -80,10 +80,10 @@ rsac <- function(files, endian = .Platform$endian)
     kinst <- substr(h4, 185, 192)
     kinst <- sub("-12345", "      ", kinst)
     seek(con = zz, where = 632)
-    x <- readBin(con = zz, what = numeric(), n = npts,
+    x <- readBin(con = zz, what = numeric(), n = N,
                  size = 4, endian = endian[i])
     close(zz)
-    data[[i]] <- list(x = x, delta = delta, depmin = depmin, depmax = depmax,
+    data[[i]] <- list(amp = x, dt = dt, depmin = depmin, depmax = depmax,
                       scale = scale, odelta = odelta,
                       b = b, e = e, o = o, a = a, f = f,
                       stla = stla, stlo = stlo, stel = stel, stdp = stdp,
@@ -93,13 +93,14 @@ rsac <- function(files, endian = .Platform$endian)
                       nzyear = nzyear, nzjday = nzjday, nzhour = nzhour,
                       nzmin = nzmin, nzsec = nzsec,
                       nzmsec = nzmsec, norid = norid,
-                      nevid = nevid, npts = npts,
-                      idep = idep, iztype = iztype,
+                      nevid = nevid, N = N,
+                      units = idep, iztype = iztype,
                       leven = leven, lpspol = lpspol,
-                      kstnm = kstnm, kevnm = kevnm, khole = khole,
+                      sta = kstnm, kevnm = kevnm, khole = khole,
                       ko = ko, ka = ka,
-                      kcmpnm = kcmpnm, knetwork = knetwork, kinst = kinst)
+                      comp = kcmpnm, knetwork = knetwork, kinst = kinst)
   }
-  return(data)
+  class(data) <- "rsac"
+  invisible(data)
 }
 

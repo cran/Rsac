@@ -1,10 +1,11 @@
-taper <- function(s, type = "hanning", width = 0.05)
+taper <- function(x, type = c("hanning", "hamming", "cosine"),
+                  width = 0.05)
 {
   type <- match.arg(type)
-  for(i in 1:length(s))
+  for(i in 1:length(x))
   {
-    x <- s[[i]]$x
-    N <- length(x)
+    xx <- x[[i]]$amp
+    N <- length(xx)
     n <- round(N * width, 0)
     taper <- rep(1, N)
     taper[1:n] <- switch(type,
@@ -13,7 +14,7 @@ taper <- function(s, type = "hanning", width = 0.05)
                          cosine = 1 - cos(pi/2/n * ((1:n)-1))
                         )
     taper <- taper * rev(taper)
-    s[[i]]$x <- x * taper
+    x[[i]]$amp <- xx * taper
   }
-  return(s)
+  return(x)
 }

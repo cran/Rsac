@@ -3,15 +3,17 @@
 \title{SAC time series units}
 \description{
   Looks up the units for when they are specified in the header as
-  integer values.
+  integer values. The units in many seismic headers are notoriously
+  unreliable, so care should be taken to find an independent source
+  to confirm the units. 
 }
 \usage{
-getunits(s)
+getunits(x)
 }
 \arguments{
-  \item{s}{A vector of SAC files.}
+  \item{x}{an object of class \code{"rsac"}.}
 }
-\value{an array of strings that describe the units of the SAC files.
+\value{a character vector that describe the units of the SAC files.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{

@@ -18,10 +18,10 @@ add(s, c)
 pow(s, c)
 }
 \arguments{
-  \item{s}{a vector of SAC data.}
+  \item{s}{an object of class \code{"rsac"}.}
   \item{c}{a constant to be applied to the data.}
 }
-\value{a vector of same length as input.
+\value{same as input.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{
@@ -31,14 +31,18 @@ data(srosa)
 getunits(srosa)
 # Convert to m/s
 srosa <- mul(srosa, 1e-9)
-p(srosa, xlim = c(150, 160))
+plot(srosa, xlim = c(150, 160))
 
-# Alternatively, for all files
+# this is also easy to do using the
+# lapply() function
+class(srosa)
+mode(srosa)
+
+# for all files
 
 m <- function(X){
        X$x <- X$x * 1e-9
-       return(X)
-     }
+       return(X) }
 srosa <- lapply(X = srosa, m)
 
 # Or individually:

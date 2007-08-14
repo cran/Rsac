@@ -1,17 +1,18 @@
 \name{srosa}
 \docType{data}
 \alias{srosa}
-\title{Example SAC data}
-\description{Example SAC data containing 3 components of motion.
+\title{Example Rsac data}
+\description{Example object of class \code{"rsac"} data containing 3
+  components of motion.
 }
 \usage{
 data(srosa)
 }
-\format{Vector containing 3 SAC files. Each is a different component of
-  the seismogram. 
+\format{Vector containing 3 seismic recordings. Each is a different
+  component of the seismogram. 
 } 
 \source{\url{http://www.ncedc.org/ncedc/station.info.html}}
-\section{Background}{A 1999 earthquake in California recorded by BRK
+\section{Background}{A 1999 earthquake in California recorded by the BRK
   station of the BK network.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
@@ -20,6 +21,6 @@ data(srosa)
 
 data(srosa)
 
-names(srosa[[1]])
+plot(srosa)
 
 }

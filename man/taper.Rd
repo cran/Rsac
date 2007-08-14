@@ -5,15 +5,17 @@
   Applies a symmetric taper to each side of SAC data.
 }
 \usage{
-taper(s, type = "hanning", width = 0.05)
+taper(x, type = c("hanning", "hamming", "cosine"),
+      width = 0.05)
 }
 \arguments{
-  \item{s}{a vector of SAC data.}
-  \item{type}{Valid values are: "hanning", "hamming", and "cosine".}
+  \item{x}{an object of class \code{"rsac"}.}
+  \item{type}{Valid values are: \sQuote{hanning}, \sQuote{hamming}, and
+    \sQuote{cosine}.} 
   \item{width}{the width of the taper. Values larger than 0.5 should
     probably never be used.}
 }
-\value{a vector of same length as input.
+\value{same as input.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{

@@ -5,16 +5,16 @@ rotate <- function(s, gcp = FALSE, phi = NULL)
     stop("Only accepts exactly 2 files.")
   # Must have same station name:
   getnms <- function(X)
-    X$kstnm
+    X$sta
   stnms <- sapply(X = s, getnms)
   if(stnms[1] != stnms[2])
-    stop("Componenets must be from the same station (kstnm).")
+    stop("Componenets must be from the same station (sta).")
   # Must have the same sampling rate (but SAC has single precision):
   getdt <- function(X)
-    X$delta
-  deltas <- sapply(X = s, getdt)
+    X$dt
+  deltas <- sapply(X = s, getdt) # SAC uses single precision
   if(diff(range(deltas)) > 1e-7)
-    stop("Components must have the same sampling rate (delta).")
+    stop("Components must have the same sampling rate (dt).")
   # Must be horizontal components:
   getincs <- function(X)
     X$cmpinc
@@ -34,7 +34,7 @@ rotate <- function(s, gcp = FALSE, phi = NULL)
     X$b
   bs <- sapply(X = s, getb)
   getnpts <- function(X)
-    X$npts
+    X$N
   npts <- sapply(X = s, getnpts)
   num2start <- round((max(bs) - bs)/deltas[1], 0) + 1
   adjnpts <- min(npts - num2start)
@@ -77,15 +77,15 @@ rotate <- function(s, gcp = FALSE, phi = NULL)
     #   the rotation matrix is for rotation the coordinate system
     Rmat <- rbind(c( cos(-B), sin(-B)),
                   c(-sin(-B), cos(-B)))
-    X1 <- s[[1]]$x[seq(num2start[1], by = 1, length = adjnpts)]
-    X2 <- s[[2]]$x[seq(num2start[2], by = 1, length = adjnpts)]
+    X1 <- s[[1]]$amp[seq(num2start[1], by = 1, length = adjnpts)]
+    X2 <- s[[2]]$amp[seq(num2start[2], by = 1, length = adjnpts)]
     #          NS  EW
     V <- cbind(X1, X2)
     Vrot <- t(Rmat %*% t(V))
     # Radial component
-    s[[1]]$x <- - Vrot[ , 1]
+    s[[1]]$amp <- - Vrot[ , 1]
     # Tangential component
-    s[[2]]$x <- - Vrot[ , 2]
+    s[[2]]$amp <- - Vrot[ , 2]
   }else
   {
     if(is.null(phi))
@@ -93,13 +93,14 @@ rotate <- function(s, gcp = FALSE, phi = NULL)
     phi <- phi * pi/180
     Rmat <- rbind(c( cos(phi), -sin(phi)),
                   c( sin(phi),  cos(phi)))
-    X1 <- s[[1]]$x[seq(num2start[1], by = 1, length = adjnpts)]
-    X2 <- s[[2]]$x[seq(num2start[2], by = 1, length = adjnpts)]
+    X1 <- s[[1]]$amp[seq(num2start[1], by = 1, length = adjnpts)]
+    X2 <- s[[2]]$amp[seq(num2start[2], by = 1, length = adjnpts)]
     V <- cbind(X1, X2)
     Vrot <- t(Rmat %*% t(V))
-    s[[1]]$x <- Vrot[ , 1]
-    s[[2]]$x <- Vrot[ , 2]
+    s[[1]]$amp <- Vrot[ , 1]
+    s[[2]]$amp <- Vrot[ , 2]
   }
   s[[1]]$b <- max(bs); s[[2]]$b <- max(bs)
+  class(s) <- "rsac"
   return(s)
 }

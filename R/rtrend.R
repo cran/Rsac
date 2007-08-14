@@ -1,16 +1,16 @@
-rtrend <- function(s){
-  for(i in 1:length(s)){
-    x <- s[[i]]$x
-    j <- 1:length(x)
-    s[[i]]$x <- residuals(lm(x ~ j))
+rtrend <- function(x){
+  for(i in 1:length(x)){
+    xx <- x[[i]]$amp
+    j <- 1:length(xx)
+    x[[i]]$amp <- residuals(lm(xx ~ j))
   }
-  return(s)
+  return(x)
 }
 
-rmean <- function(s){
-  for(i in 1:length(s))
-    s[[i]]$x <- s[[i]]$x - mean(s[[i]]$x)
-  return(s)
+rmean <- function(x){
+  for(i in 1:length(x))
+    x[[i]]$amp <- x[[i]]$amp - mean(x[[i]]$amp)
+  return(x)
 }
 
 

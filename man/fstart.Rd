@@ -13,12 +13,12 @@ maxx(X)
 minx(X)
 }
 \arguments{
-  \item{X}{A vector of SAC files.}
+  \item{X}{an object of class \code{"rsac"}.}
 }
 \value{the max, min, or starting time.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{
-# Used by \code{psac}
+# Used by \code{plot.rsac}
 }
 \keyword{internal}

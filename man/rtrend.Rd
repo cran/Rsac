@@ -6,13 +6,13 @@
   Removes the linear trend or mean from SAC data.
 }
 \usage{
-rtrend(s)
-rmean(s)
+rtrend(x)
+rmean(x)
 }
 \arguments{
-  \item{s}{a vector of SAC data.}
+  \item{x}{an object of class \code{"rsac"}.}
 }
-\value{a vector of same length as input.
+\value{same as input.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{

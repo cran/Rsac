@@ -15,9 +15,9 @@ dif(s)
 int(s)
 }
 \arguments{
-  \item{s}{a vector of SAC data.}
+  \item{s}{an object of class \code{"rsac"}.}
 }
-\value{a vector of same length as input.
+\value{same as input.
 }
 \seealso{\code{\link{rtrend}}}
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
@@ -25,24 +25,23 @@ int(s)
 
 data(srosa)
 getunits(srosa)
-# convert to cm/s
+# convert to cm/s/s
 srosa.accel <- dif(mul(srosa, 1e-7))
 
-amax <-  function(X) X$x <- max(abs(X$x))
+amax <-  function(X)
+  X$x <- max(abs(X$amp))
 
-am <- max(sapply(X = srosa.accel, amax))
+pga <- max(sapply(X = srosa.accel, amax))
 # cm/s/s
 
-spect(srosa, type = "l", log = "y")
+spect(srosa)
 
 srosa.disp <- int(rtrend(srosa))
 
-p(srosa, xlim = c(100, 400))
-p(srosa.disp, xlim = c(100, 400))
-srosa.disp <- hp(srosa.disp, c = 0.1, n = 4, p = 2)
-p(srosa.disp, xlim = c(100, 400))
-spect(srosa.disp, type = "l", log = "y",
-      ylim = c(1e-2, 1e2)
-     )
+plot(srosa, xlim = c(100, 400))
+plot(srosa.disp, xlim = c(100, 400))
+srosa.disp <- hp(srosa.disp, c = 0.1)
+plot(srosa.disp, xlim = c(100, 400))
+spect(srosa.disp)
 }
 \keyword{}

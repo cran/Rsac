@@ -3,7 +3,7 @@
 \title{Great-circle-path parameters}
 \description{
   Calculates the azimuth and back azimuth of the great-circle-path
-  between two points (source and receiver).
+  between two points (source and receiver) on a sphere.
 }
 \usage{
 gcp(s, e)
@@ -17,11 +17,11 @@ gcp(s, e)
     }
 }
 \value{a list containing the following elements:
-  \item{\code{C}:}{azimuth, in degrees.}
-  \item{\code{B}:}{back azimuth, in degrees.}
-  \item{\code{a}:}{arc distance, in degrees.}
-  \item{\code{lat}:}{latitude defining the path.}
-  \item{\code{lon}:}{longitude defining the path.}
+  \item{C}{azimuth, in degrees.}
+  \item{B}{back azimuth, in degrees.}
+  \item{a}{arc distance, in degrees.}
+  \item{lat}{latitude defining the path.}
+  \item{lon}{longitude defining the path.}
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \references{
@@ -31,4 +31,4 @@ gcp(s, e)
 \examples{
 
 }
-\keyword{internal}
+\keyword{}

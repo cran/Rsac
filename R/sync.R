@@ -1,21 +1,21 @@
-sync <- function(s)
+sync <- function(x)
 {
-  st <- sapply(s, fstart)
+  st <- sapply(x, fstart)
   st <- st - min(st)
   ref <- which(st == min(st))[1]
-  reft <- list(nzhour = s[[ref]]$nzhour,
-               nzmin = s[[ref]]$nzmin,
-               nzsec = s[[ref]]$nzsec,
-               nzmsec = s[[ref]]$nzmsec,
-               b = s[[ref]]$b)
-  for(i in 1:length(s))
+  reft <- list(nzhour = x[[ref]]$nzhour,
+               nzmin = x[[ref]]$nzmin,
+               nzsec = x[[ref]]$nzsec,
+               nzmsec = x[[ref]]$nzmsec,
+               b = x[[ref]]$b)
+  for(i in 1:length(x))
   {
-    s[[i]]$nzhour <- reft$nzhour
-    s[[i]]$nzmin <- reft$nzmin
-    s[[i]]$nzsec <- reft$nzsec
-    s[[i]]$nzmsec <- reft$nzmsec
-    s[[i]]$b <- s[[i]]$b + st[i]
-    s[[i]]$e <- s[[i]]$e + st[i]
+    x[[i]]$nzhour <- reft$nzhour
+    x[[i]]$nzmin <- reft$nzmin
+    x[[i]]$nzsec <- reft$nzsec
+    x[[i]]$nzmsec <- reft$nzmsec
+    x[[i]]$b <- x[[i]]$b + st[i]
+    x[[i]]$e <- x[[i]]$e + st[i]
   }
-  return(s)
+  return(x)
 }

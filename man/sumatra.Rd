@@ -1,37 +1,37 @@
 \name{sumatra}
 \docType{data}
 \alias{sumatra}
-\title{Example SAC data}
-\description{Example vector of SAC data containing 32 recordings of the
-  2004 Sumatra-Andaman Earthquake.
+\title{Example Rsac data}
+\description{Example of class \code{"rsac"} object  containing 32
+  recordings of the 2004 Sumatra-Andaman Earthquake.
 }
 \usage{
 data(sumatra)
 }
-\format{Vector containing 32 SAC files. Each is a LHZ channel at a
+\format{Vector containing 23 recordings. Each is a LHZ channel at a
   different recording station (L = long period, H = high gain, Z =
   vertical component). 
 } 
 \source{\url{http://www.iris.edu/}}
 \section{Background}{ The 2004 Sumatra-Andaman Earthquake. There is
   extensive literature on this event. I include it here simply as
-  example data.
+  an interesting example.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \keyword{datasets}
 \examples{
 
 data(sumatra)
-getstas <- function(X) X$kstnm
+getstas <- function(X)
+  gsub(" ", "", X$sta)
 stas <- sapply(X = sumatra, getstas)
-stas <- substr(stas, 1, 4)
 getunits(sumatra)
 sumatra <- mul(sumatra, 1e-9)
-# Bandpass filter = hp + lp
-sumatra <- lp(hp(int(taper(rtrend(sumatra))),
-                 c = 0.001, n = 3, p = 2),
-              c = 0.5, n = 3, p = 2)
-getdelta <- function(X){
+# Bandpass filter
+sumatra <- bp(int(taper(rtrend(sumatra))),
+              c = c(0.01, 0.3))
+getdelta <- function(X)
+{
   delta <- gcp(s = list(lat = X$stla, lon = X$stlo),
                e = list(lat = X$evla, lon = X$evlo))$a
 }
@@ -46,10 +46,11 @@ plot(1, 1, type = "n", axes = FALSE,
 udel <- sort(unique(del))
 cols <- (1:length(udel))\%\%6 + 1
 
-for(i in 1:length(sumatra)){
-  x <- 100 * sumatra[[i]]$x + del[i]
+for(i in 1:length(sumatra))
+{
+  x <- 100 * sumatra[[i]]$amp + del[i]
   start <- st[i] + sumatra[[i]]$b
-  deltat <- sumatra[[i]]$delta
+  deltat <- sumatra[[i]]$dt
   time <- seq(from = start, by = deltat, length = length(x))
   lines(time, x, col = cols[del[i] == udel])
 }
