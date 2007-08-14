@@ -1,10 +1,10 @@
 Package: Rsac
-Version: 0.1-4
+Version: 0.1-5
 Title: Seismic analysis tools in R
 Description: The functions in this package are mostly designed to
   reproduce the most commonly used functions in the LLNL software
   Seismic Analysis Code (SAC, http://www.llnl.gov/sac/). This includes
-  reading standard binary SAC (as well as AH and SEGY) files, plotting
+  reading standard binary SAC (and also SEGY) files, plotting
   arrays of seismic recordings (the "SAC" plotting style), filtering
   (high pass, lowpass, and bandpass IIR filters), integration,
   differentiation, instrument deconvolution.
@@ -15,4 +15,4 @@ Maintainer: Eric M. Thompson <eric.thompson@tufts.edu>
 Depends: stats
 License: GPL version 2
 URL: http://www.tufts.edu/~ethomp04/files/Rsac.html
-Packaged: Tue Oct  9 16:45:22 2007; root
+Packaged: Fri Oct 12 13:41:33 2007; ethomp04

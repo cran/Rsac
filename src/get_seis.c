@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <rpc/rpc.h>
+//#include <rpc/rpc.h>
 
 #include <assert.h>
 #include <math.h>
@@ -17,7 +17,7 @@
 /*                           MUST make sure this is correct   **/
 /*                              for windows, set this to 0  **/
 /**************************************************************************/
-#define	USE_AH_XDR 1
+#define	USE_AH_XDR 0
 /**************************************************************************/
 
 /*	low level i/o routines for ah format records
@@ -26,6 +26,8 @@
 
 
 #if USE_AH_XDR
+//#include <rpc/rpc.h>
+#include <rpc.h>
 #include <sys/ioctl.h>
 #endif
 
