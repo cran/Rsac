@@ -1,6 +1,6 @@
-gcp <- function(s, e)
+"gcp" <- function(s, e)
 {
-  # Method and notation from Lay and Wallace, 1995
+  # Method and notation from Lay and Wallace (1995)
   # Convert to radians:
   s$lat <- s$lat * pi/180
   s$lon <- s$lon * pi/180

@@ -1,8 +1,8 @@
-iir <- function(x, ord = 3, fl = NA, fh = NA,
-                type = c("LP", "HP", "BP", "BR"),
-                proto = c("BU", "BE", "C1", "C2"),
-                zerophase = TRUE,
-                ca = NA, ctr = NA)
+"iir" <- function(x, ord = 3, fl = NA, fh = NA,
+                  type = c("LP", "HP", "BP", "BR"),
+                  proto = c("BU", "BE", "C1", "C2"),
+                  zerophase = TRUE,
+                  ca = NA, ctr = NA)
 {
   proto <- match.arg(proto)
   type <- match.arg(type)
@@ -60,13 +60,13 @@ iir <- function(x, ord = 3, fl = NA, fh = NA,
   return(x)
 }
 
-lp <- function(x, c, n = 3, proto = "BU", zerophase = TRUE)
+"lp" <- function(x, c, n = 3, proto = "BU", zerophase = TRUE)
   iir(x, ord = n, fh = c, type = "LP", proto = proto, zerophase = zerophase)
 
-hp <- function(x, c, n = 3, proto = "BU", zerophase = TRUE)
+"hp" <- function(x, c, n = 3, proto = "BU", zerophase = TRUE)
   iir(x, ord = n, fl = c, type = "HP", proto = proto, zerophase = zerophase)
 
-bp <- function(x, c, n = 3, proto = "BU", zerophase = TRUE)
+"bp" <- function(x, c, n = 3, proto = "BU", zerophase = TRUE)
 {
   if(length(c) != 2)
     stop("Must provide two corner frequenies.\n")

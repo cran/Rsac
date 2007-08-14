@@ -1,4 +1,4 @@
-int <- function(s)
+"int" <- function(s)
 {
   for(i in 1:length(s))
   {
@@ -11,7 +11,7 @@ int <- function(s)
   return(s)
 }
 
-dif <- function(s)
+"dif" <- function(s)
 {
   for(i in 1:length(s))
   {

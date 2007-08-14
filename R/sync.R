@@ -1,4 +1,4 @@
-sync <- function(x)
+"sync" <- function(x)
 {
   st <- sapply(x, fstart)
   st <- st - min(st)

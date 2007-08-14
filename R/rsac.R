@@ -1,4 +1,4 @@
-rsac <- function(files, endian = .Platform$endian)
+"rsac" <- function(files, endian = .Platform$endian)
 {
   if(length(endian) == 1 & length(files) > 1)
     endian <- rep(endian, length(files))

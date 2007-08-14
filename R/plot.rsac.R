@@ -1,7 +1,6 @@
-plot.rsac <-
+"plot.rsac" <-
   function(x, xlim = NULL, ylim = NULL, xlab = NULL, ylab = NULL,
-           axes = TRUE, lty = NULL, col = NULL,
-           onerow = FALSE, ...)
+           axes = TRUE, lty = NULL, col = NULL, onerow = FALSE, ...)
 {
   maxes <- sapply(x, maxx)
   mins <- sapply(x, minx)
@@ -16,7 +15,7 @@ plot.rsac <-
     onerow <- TRUE
   else
     x <- sync(x)
-  if(onerow == FALSE)
+  if(!onerow)
   {
     par(mfrow = c(n, 1), mar = c(4, 4, 1, 1))
     for(i in 1:n)
@@ -29,6 +28,11 @@ plot.rsac <-
       ylim <- NULL
       if(i == n)
         title(xlab = "Time")
+      if(axes)
+      {
+        axis(side = 2)
+        axis(side = 1)
+      }
     }
   }else{
     if(is.null(col))
@@ -49,7 +53,11 @@ plot.rsac <-
              col = col, ...)
       }else
         lines(time, xx, lty = as.numeric(lty[i]), col = col[i])
-      axis(side = 2); axis(side = 1)
+      if(axes)
+      {
+        axis(side = 2)
+        axis(side = 1)
+      }
     }
   }
 }
@@ -72,7 +80,7 @@ fstart <- function(X)
 }
 
 # Also define a summary method:
-summary.rsac <- function(object, ...)
+"summary.rsac" <- function(object, ...)
 {
   n <- length(object)
   npts <- sapply(object, function(X) X$N)
@@ -83,7 +91,7 @@ summary.rsac <- function(object, ...)
   print(data.frame(npts, dt, comp, sta, units))
 }
 
-lines.rsac <- function(x, ...)
+"lines.rsac" <- function(x, ...)
 {
   st <- sapply(x, fstart)
   st <- st - min(st)

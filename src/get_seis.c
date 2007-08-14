@@ -11,7 +11,7 @@
 
 #include <sys/stat.h>
 
-#include <malloc.h>
+//#include <malloc.h>
 
 /**********   change 	USE_AH_XDR  to 0 to exclude all calls to XDR (AH)   **/
 /*                           MUST make sure this is correct   **/

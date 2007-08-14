@@ -1,4 +1,4 @@
-getunits <- function(x)
+"getunits" <- function(x)
 {
   getint <- function(X) X$units
   val <- sapply(x, getint)

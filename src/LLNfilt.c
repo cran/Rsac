@@ -1,4 +1,5 @@
-#include <malloc.h>
+//#include <malloc.h>
+#include <stdlib.h>
 /*
    Package for general recursion filtering; taken from SAC recursion
    filtering package written by Dave Harris (Copyright, Lawrence

@@ -50,7 +50,7 @@ getdelta <- function(X){
                e = list(lat = X$evla, lon = X$evlo))$a}
 del <- sapply(X = sumatra, getdelta)
 
-sum <- sumatra[c(2, 23, 14, 3)]
+sum <- sumatra[c(1, 3, 4, 9)]
 
 spect(sum, plot = TRUE, spans = c(101, 151),
       log = "no", xlim = c(0, 0.15))

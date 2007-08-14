@@ -2,13 +2,13 @@
 \docType{data}
 \alias{sumatra}
 \title{Example Rsac data}
-\description{Example of class \code{"rsac"} object  containing 32
+\description{Example of class \code{"rsac"} object  containing 16
   recordings of the 2004 Sumatra-Andaman Earthquake.
 }
 \usage{
 data(sumatra)
 }
-\format{Vector containing 23 recordings. Each is a LHZ channel at a
+\format{Vector containing 16 recordings. Each is a LHZ channel at a
   different recording station (L = long period, H = high gain, Z =
   vertical component). 
 } 

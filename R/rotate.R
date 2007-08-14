@@ -1,4 +1,4 @@
-rotate <- function(s, gcp = FALSE, phi = NULL)
+"rotate" <- function(s, gcp = FALSE, phi = NULL)
 {
   # Only accepts list of length 2:
   if(length(s) != 2)

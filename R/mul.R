@@ -1,4 +1,4 @@
-mul <- function(s, c)
+"mul" <- function(s, c)
 {
   n <- length(s)
   l <- length(c)
@@ -9,7 +9,7 @@ mul <- function(s, c)
   return(s)
 }
 
-add <- function(s, c)
+"add" <- function(s, c)
 {
   n <- length(s)
   l <- length(c)
@@ -20,7 +20,7 @@ add <- function(s, c)
   return(s)
 }
 
-pow <- function(s, c)
+"pow" <- function(s, c)
 {
   n <- length(s)
   l <- length(c)

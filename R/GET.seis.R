@@ -79,7 +79,7 @@ tojul <- function(year, month, day)
 }
 
 
-GET.seis <- function(fnames, kind = 1, PLOT = FALSE)
+"GET.seis" <- function(fnames, kind = 1, PLOT = FALSE)
 {
   # o gets a bunch of seismic data files from a
   #   directory and store in structure

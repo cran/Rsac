@@ -1,4 +1,4 @@
-spect <- function(x, plot = TRUE, main = NULL, ...)
+"spect" <- function(x, plot = TRUE, main = NULL, ...)
 {
   # See spectrum, plot.spec, spec.pgram, in STATS
   sac2ts <- function(X)

@@ -1,5 +1,5 @@
-taper <- function(x, type = c("hanning", "hamming", "cosine"),
-                  width = 0.05)
+"taper" <- function(x, type = c("hanning", "hamming", "cosine"),
+                    width = 0.05)
 {
   type <- match.arg(type)
   for(i in 1:length(x))
