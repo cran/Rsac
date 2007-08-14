@@ -1,6 +1,6 @@
 \name{spect}
 \alias{spect}
-\title{Spectral density estimation}
+\title{SPECTRAL DENSITY ESTIMATION}
 \description{
   This is essentially a wrapper function for \code{spectrum} from
   the \pkg{stats} package. Thus, it is important the user be
@@ -9,7 +9,7 @@
   spectra of \code{"rsac"} class objects.
 }
 \usage{
-spect(x, plot = TRUE, main = NULL, ...)
+spect(x, plot = TRUE, main = NULL, log = "no", ...)
 }
 \arguments{
   \item{x}{an object of class \code{"rsac"}.}
@@ -18,7 +18,8 @@ spect(x, plot = TRUE, main = NULL, ...)
     provided, the code creates the character vector from the station,
     component, and network in the header files, but these are not always
     reliable. The length of the vector must equal the length of
-    \code{x}.} 
+    \code{x}.}
+  \item{log}{See \code{\link[stats]{plot.spec}}.}
   \item{\dots}{further parameters. See \code{\link[stats]{spectrum}} and
     \code{plot.spec}.}
 }
@@ -43,7 +44,7 @@ spect(eqs, spans = 201)
 spect(eqs, spans = c(101, 151))
 
 spect(eqs, spans = c(101, 151),
-      log = "no")
+      log = "yes")
 
 getdelta <- function(X){
   delta <- gcp(s = list(lat = X$stla, lon = X$stlo),
@@ -56,4 +57,4 @@ spect(sum, plot = TRUE, spans = c(101, 151),
       log = "no", xlim = c(0, 0.15))
 
 }
-\keyword{}
+

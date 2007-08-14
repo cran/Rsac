@@ -2,7 +2,7 @@
 \alias{fromjul}
 \alias{tojul}
 \alias{getmoday}
-\title{Julian day conversion functions}
+\title{JULIAN DAY CONVERSION FUNCTIONS}
 \description{
 Converts to and from Julian days.
 }
@@ -17,13 +17,9 @@ getmoday(jul, iyear)
 }
 \value{a list containing the date values. The
   specific elements of the list are:
-  \item{s}{to do.}
-}
-\seealso{
+  \item{mo}{month.}
+  \item{dom}{day of month.}
+  \item{jul}{Julian day.}
 }
 \author{Jonathan M. Lees <jonathan.lees@unc.edu>}
-\examples{
-
-
-}
 \keyword{internal}

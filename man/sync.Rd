@@ -1,6 +1,6 @@
 \name{sync}
 \alias{sync}
-\title{Synchronize}
+\title{SYNCHRONIZE}
 \description{
   Synchronizes the reference times of all files in a vector of SAC
   files. This is done automatically in \code{\link{plot.rsac}}.
@@ -49,7 +49,5 @@ plot(srosa[3], axes = FALSE, ylab = "East-West",
      xlab = "Time", xlim = xlim)
 axis(side = 2); axis(side = 1)
 
-
-
 }
-\keyword{}
+

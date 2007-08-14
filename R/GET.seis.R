@@ -79,21 +79,15 @@ tojul <- function(year, month, day)
 }
 
 
-"GET.seis" <- function(fnames, kind = 1, PLOT = FALSE)
-{
+"GET.seis" <- function(fnames, kind = 2 ){
   # o gets a bunch of seismic data files from a
   #   directory and store in structure
   # o kind: 1 = segy, 2 = sac, 3 = AH
   
-  if(missing(PLOT))
-    PLOT <- FALSE
-  if(missing(kind))
-    kind <- 3
-
   GIVE <- as.list(1:length(fnames))
-
+  
   ii <- 1
-
+  
   DATIM <- rep(0,length=4)
   n <- 1
   dt <- 0.025000
@@ -195,13 +189,6 @@ tojul <- function(year, month, day)
                         DATTIM = tstart, N = N,
                         units = aunits)
       
-      if(PLOT == TRUE)
-        {
-          plot(barf[[3]], type = 'l',
-               main = paste(sep = " ", thesta, thecomp))
-          print("CLICK in WINDOW for NEXT TRACE:")
-          locator()
-        }
     }
   class(GIVE) <- "rsac"
   invisible(GIVE)

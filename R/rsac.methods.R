@@ -1,3 +1,4 @@
+######################################################
 "plot.rsac" <-
   function(x, xlim = NULL, ylim = NULL, xlab = NULL, ylab = NULL,
            axes = TRUE, lty = NULL, col = NULL, onerow = FALSE, ...)
@@ -62,6 +63,8 @@
   }
 }
 
+######################################################
+# Some junk:
 maxx <- function(X)
   max(X$amp)
 minx <- function(X)
@@ -79,7 +82,15 @@ fstart <- function(X)
   return(x)
 }
 
-# Also define a summary method:
+######################################################
+"c.rsac" <- function(...)
+{
+  x <- c(unlist(unclass(list(...)), recursive = FALSE))
+  class(x) <- "rsac"
+  return(x)
+}
+
+######################################################
 "summary.rsac" <- function(object, ...)
 {
   n <- length(object)
@@ -91,6 +102,7 @@ fstart <- function(X)
   print(data.frame(npts, dt, comp, sta, units))
 }
 
+######################################################
 "lines.rsac" <- function(x, ...)
 {
   st <- sapply(x, fstart)
@@ -105,4 +117,3 @@ fstart <- function(X)
 }
 
 
-  

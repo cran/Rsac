@@ -1,8 +1,8 @@
 \name{taper}
 \alias{taper}
-\title{Apply a taper}
+\title{TAPER}
 \description{
-  Applies a symmetric taper to each side of SAC data.
+  Applies a symmetric taper to each side of the SAC records.
 }
 \usage{
 taper(x, type = c("hanning", "hamming", "cosine"),
@@ -20,5 +20,14 @@ taper(x, type = c("hanning", "hamming", "cosine"),
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{
 
+x <- rsac.skeleton(1)
+x[[1]]$amp <- runif(1e3, min = -1)
+x[[1]]$dt <- 1
+
+plot(x)
+
+x.t <- taper(x)
+lines(x.t, col = "blue")
+
 }
-\keyword{}
+

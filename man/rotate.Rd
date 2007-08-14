@@ -1,6 +1,6 @@
 \name{rotate}
 \alias{rotate}
-\title{Rotate horizontal components}
+\title{ROTATE HORIZONTAL COMPONENTS}
 \description{
   This function will rotate horizontal components. This is useful for
   getting the horizontal components into the tangential and radial
@@ -45,4 +45,4 @@ TR <- rotate(HC, gcp = TRUE)
 plot(TR)
 
 }
-\keyword{}
+

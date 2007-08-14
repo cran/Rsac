@@ -2,7 +2,7 @@
 \alias{fstart}
 \alias{maxx}
 \alias{minx}
-\title{SAC array values}
+\title{SAC ARRAY VALUES}
 \description{
   Calculates the starting time, the max, and the min values of \code{X}
   for a vector of SAC files.

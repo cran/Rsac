@@ -1,7 +1,7 @@
 \name{sumatra}
 \docType{data}
 \alias{sumatra}
-\title{Example Rsac data}
+\title{EXAMPLE RSAC DATA}
 \description{Example of class \code{"rsac"} object  containing 16
   recordings of the 2004 Sumatra-Andaman Earthquake.
 }

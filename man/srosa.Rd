@@ -1,7 +1,7 @@
 \name{srosa}
 \docType{data}
 \alias{srosa}
-\title{Example Rsac data}
+\title{EXAMPLE RSAC DATA}
 \description{Example object of class \code{"rsac"} data containing 3
   components of motion.
 }

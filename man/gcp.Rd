@@ -1,6 +1,6 @@
 \name{gcp}
 \alias{gcp}
-\title{Great-circle-path parameters}
+\title{GREAT-CIRCLE-PATH PARAMETERS}
 \description{
   Calculates the azimuth and back azimuth of the great-circle-path
   between two points (source and receiver) on a sphere.
@@ -28,7 +28,5 @@ gcp(s, e)
   Lay, T. and T. C. Wallace, (1995) \emph{Modern Global Seismology},
   International geophysics series; v. 58, San Diego: Academic Press.
 }
-\examples{
 
-}
-\keyword{}
+

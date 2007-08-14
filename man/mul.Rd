@@ -2,7 +2,7 @@
 \alias{mul}
 \alias{add}
 \alias{pow}
-\title{Some simple arithmetic}
+\title{SOME SIMPLE ARITHMETIC}
 \description{
   These are provided as a matter of convience since any R functions can
   be easily applied to the vectors of SAC data (see below for
@@ -50,4 +50,4 @@ srosa <- lapply(X = srosa, m)
 srosa[[1]]$x <- abs(srosa[[1]]$x)
 
 }
-\keyword{}
+

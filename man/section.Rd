@@ -1,6 +1,6 @@
 \name{section}
 \alias{section}
-\title{Plot a seismic section}
+\title{SEISMIC SECTION}
 \description{
   Plots a seismic section given an array of seismic records. The
   recordings are offset by distance, which can be user supplied, or
@@ -50,4 +50,4 @@ section(x, dist = NULL, vertdist = TRUE, ampnorm = TRUE, mfactor = 1,
 data(sumatra)
 section(sumatra)
 }
-\keyword{}
+

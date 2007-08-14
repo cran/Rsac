@@ -2,8 +2,9 @@
 \alias{plot.rsac}
 \alias{lines.rsac}
 \alias{[.rsac}
+\alias{c.rsac}
 \alias{summary.rsac}
-\title{Methods for class 'rsac'}
+\title{METHODS FOR CLASS 'rsac'}
 \description{
   Plotting, indexing, and summary methods for objects of class
   \code{"rsac"}.
@@ -14,6 +15,7 @@
     onerow = FALSE, ...)
 \method{lines}{rsac}(x, ...)
 \method{[}{rsac}(x, i)
+\method{c}{rsac}(...)
 \method{summary}{rsac}(object, ...)
 }
 \arguments{
@@ -54,4 +56,4 @@ summary(srosa)
 plot(srosa[2])
 
 }
-\keyword{}
+

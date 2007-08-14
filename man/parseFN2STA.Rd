@@ -1,6 +1,6 @@
 \name{parseFN2STA}
 \alias{parseFN2STA}
-\title{Parse station name}
+\title{PARSE STATION NAME}
 \description{
   Gets the station name and the component name from the file
   name. Assumes that the station name and the component name are the
@@ -20,8 +20,5 @@ parseFN2STA(fn)
 \seealso{\code{\link{GET.seis}}
 }
 \author{Jonathan M. Lees <jonathan.lees@unc.edu>}
-\examples{
 
-
-}
 \keyword{internal}

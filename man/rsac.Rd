@@ -1,6 +1,6 @@
 \name{rsac}
 \alias{rsac}
-\title{Read a SAC file}
+\title{READ A BINARY SAC FILE}
 \description{
   This function reads the header information and data of a SAC binary
   file into a list.
@@ -84,6 +84,9 @@
 }
 \examples{
 
+x <- rsac(system.file("bigendian/2003.356.19.15.31.0000.NC.NTAB..EHZ.D.SAC", package = "Rsac"), endian = "big")
+
+plot(x)
 
 }
-\keyword{}
+

@@ -3,7 +3,7 @@
 \alias{lp}
 \alias{hp}
 \alias{bp}
-\title{Infinite Impulse Response Filters}
+\title{INFINITE IMPULSE RESPONSE FILTERS}
 \description{
   Applies an IIR filter to an object of class \code{"rsac"}. 
 }
@@ -62,4 +62,4 @@ testf <- bp(srosa, c = c(2, 4))
 spect(testf, log = "no")
 
 }
-\keyword{}
+

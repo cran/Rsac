@@ -1,7 +1,7 @@
 \name{Calculus}
 \alias{dif}
 \alias{int}
-\title{Differentiation and Integration}
+\title{DIFFERENTIATION AND INTEGRATION}
 \description{
   Differentiation (by two-point differencing) and integration (by
   rectangular approximation) in the time domain. For differentiation,
@@ -44,4 +44,4 @@ srosa.disp <- hp(srosa.disp, c = 0.1)
 plot(srosa.disp, xlim = c(100, 400))
 spect(srosa.disp)
 }
-\keyword{}
+

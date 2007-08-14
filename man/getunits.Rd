@@ -1,9 +1,9 @@
 \name{getunits}
 \alias{getunits}
-\title{SAC time series units}
+\title{SAC TIME SERIES UNITS}
 \description{
-  Looks up the units for when they are specified in the header as
-  integer values. The units in many seismic headers are notoriously
+  Looks up the units of the SAC record. 
+  The units in many seismic headers are notoriously
   unreliable, so care should be taken to find an independent source
   to confirm the units. 
 }
@@ -18,5 +18,9 @@ getunits(x)
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{
 
+data(srosa)
+getunits(srosa)
+
+
 }
-\keyword{}
+
