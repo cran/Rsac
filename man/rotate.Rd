@@ -15,8 +15,8 @@ rotate(s, gcp = FALSE, phi = NULL)
   \item{s}{a vector of SAC data. Must have length 2, both must have the
     same sampling rate (delta), and be orthogonal horizontal components
     (cmpinc = 90) at the same station (kstnm).}  
-  \item{gcp}{logical for if components should be rotated to the \dQuote{great
-    circle path}. If TRUE, then stla, stlo, evla, and evlo must be
+  \item{gcp}{logical for if components should be rotated to the "great
+    circle path". If TRUE, then stla, stlo, evla, and evlo must be
     defined so that the back azimuth can be calculated.}
   \item{phi}{if gcp == FALSE then the components will be rotated
     clockwise by this angle (in radians). This is equivalent to the SAC

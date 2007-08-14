@@ -1,4 +1,5 @@
-sync <- function(s){
+sync <- function(s)
+{
   st <- sapply(s, fstart)
   st <- st - min(st)
   ref <- which(st == min(st))[1]
@@ -7,7 +8,8 @@ sync <- function(s){
                nzsec = s[[ref]]$nzsec,
                nzmsec = s[[ref]]$nzmsec,
                b = s[[ref]]$b)
-  for(i in 1:length(s)){
+  for(i in 1:length(s))
+  {
     s[[i]]$nzhour <- reft$nzhour
     s[[i]]$nzmin <- reft$nzmin
     s[[i]]$nzsec <- reft$nzsec

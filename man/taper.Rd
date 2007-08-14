@@ -9,8 +9,7 @@ taper(s, type = "hanning", width = 0.05)
 }
 \arguments{
   \item{s}{a vector of SAC data.}
-  \item{type}{Valid values are: \dQuote{hanning}, \dQuote{hamming}, and
-      \dQuote{cosine}.}
+  \item{type}{Valid values are: "hanning", "hamming", and "cosine".}
   \item{width}{the width of the taper. Values larger than 0.5 should
     probably never be used.}
 }

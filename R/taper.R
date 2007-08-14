@@ -1,6 +1,8 @@
-taper <- function(s, type = "hanning", width = 0.05){
+taper <- function(s, type = "hanning", width = 0.05)
+{
   type <- match.arg(type)
-  for(i in 1:length(s)){
+  for(i in 1:length(s))
+  {
     x <- s[[i]]$x
     N <- length(x)
     n <- round(N * width, 0)

@@ -1,4 +1,5 @@
-getunits <- function(s){
+getunits <- function(s)
+{
   getidep <- function(X) X$idep
   val <- sapply(s, getidep)
   val[val == 5] <- "Unknown"

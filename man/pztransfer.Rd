@@ -14,11 +14,11 @@ pz.tf(p = NULL, z = NULL, g = NULL)
 }
 \arguments{
   \item{s}{a vector of SAC data.}
-  \item{file}{name of a \sQuote{pole-zero} file.}
+  \item{file}{name of a 'pole-zero' file.}
   \item{p}{array of poles.}
   \item{z}{array of zeros.}
   \item{g}{gain.}
-  \item{domain}{\dQuote{f} for frequency domain calculation; \dQuote{t} for time
+  \item{domain}{"f" for frequency domain calculation; "t" for time
     domain calculation.}
   \item{decon}{if FALSE, then the transfer function is applied TO the
     data in the vector \code{s}. If TRUE, then the transfer function
@@ -28,8 +28,8 @@ pz.tf(p = NULL, z = NULL, g = NULL)
 \value{\code{pztransfer}: a vector of SAC data the same length as
 input; \code{pz.tf}: the transfer function \code{H(s)}.
 }
-\seealso{\code{\link{lp}}, \code{\link{hp}}, \code{\link{buttap}},
-  \code{\link{besselap}}, \code{\link{cheb1ap}}, \code{\link{cheb2ap}}
+\seealso{\code{\link{lp}}, \code{\link{hp}}, \code{\link{butpz}},
+  \code{\link{besselpz}}, \code{\link{cheb1pz}}, \code{\link{cheb2pz}}
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{

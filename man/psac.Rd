@@ -7,15 +7,14 @@
   trace. 
 } 
 \usage{
-psac(s, ylim = NULL, lty = NULL, col = NULL, \ldots)
+psac(s, ylim = NULL, lty = NULL, col = NULL, ...)
 }
 \arguments{
   \item{s}{a vector of SAC data.}
   \item{ylim}{y-axis limits.}
   \item{lty}{line type.}
   \item{col}{line color.}
-  \item{\ldots}{further graphical parameters. See \code{plot.default}
-    in base package.}
+  \item{...}{further graphical parameters. See \code{plot.default}.}
 }
 \value{none.
 }

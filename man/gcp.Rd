@@ -17,14 +17,17 @@ gcp(s, e)
     }
 }
 \value{a list containing the following elements:
-  \item{C:}{azimuth, in degrees.}
-  \item{B:}{back azimuth, in degrees.}
-  \item{a:}{arc distance, in degrees.}
-  \item{lat:}{array of latitudes defining the path.}
-  \item{lon:}{array of longitudes defining the path.}
+  \item{\code{C}:}{azimuth, in degrees.}
+  \item{\code{B}:}{back azimuth, in degrees.}
+  \item{\code{a}:}{arc distance, in degrees.}
+  \item{\code{lat}:}{latitude defining the path.}
+  \item{\code{lon}:}{longitude defining the path.}
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
-\seealso{\code{\link{rotate}}}
+\references{
+  Lay, T. and T. C. Wallace, (1995) \emph{Modern Global Seismology},
+  International geophysics series; v. 58, San Diego: Academic Press.
+}
 \examples{
 
 }

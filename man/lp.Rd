@@ -1,4 +1,4 @@
-\name{lp, hp}
+\name{lp}
 \alias{lp}
 \alias{hp}
 \title{Low/High pass filter}
@@ -18,13 +18,13 @@ hp(s, c = 2, n = 1, p = 2, type = "BU", domain = "t")
   \item{p}{number of passes. Only supported values are 1 and 2, but it will
     treat value that is not 1 as 2.}
   \item{type}{filter type. see \code{\link{tf}}}
-  \item{domain}{\dQuote{f} for frequency domain; \dQuote{t} for time domain.}
+  \item{domain}{"f" for frequency domain; "t" for time domain.}
 }
 \value{a vector of SAC data the same length as input.
 }
 \seealso{\code{\link{tf}}, \code{\link{pz.tf}},
-  \code{\link{buttap}}, \code{\link{besselap}}, \code{\link{cheb1ap}},
-  \code{\link{cheb2ap}}, \code{\link{taper}}
+  \code{\link{butpz}}, \code{\link{besselpz}}, \code{\link{cheb1pz}},
+  \code{\link{cheb2pz}}, \code{\link{taper}}
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
 \examples{

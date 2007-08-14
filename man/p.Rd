@@ -7,12 +7,11 @@
   \code{\link{psac}} plots all traces on the same graph.
 }
 \usage{
-p(s, \ldots)
+p(s, ...)
 }
 \arguments{
   \item{s}{a vector of SAC data.}
-  \item{\ldots}{further graphical parameters. See \code{plot.default}
-    in base package.}
+  \item{...}{further graphical parameters. See \code{plot.default}.}
 }
 \value{none.
 }

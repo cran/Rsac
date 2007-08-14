@@ -1,5 +1,6 @@
-gcp <- function(s, e){
-  # From Lay and Wallace, 1995
+gcp <- function(s, e)
+{
+  # Method and notation from Lay and Wallace, 1995
   # Convert to radians:
   s$lat <- s$lat * pi/180
   s$lon <- s$lon * pi/180
@@ -14,18 +15,18 @@ gcp <- function(s, e){
   # Backazimuth:
   B <- acos((cos(b) - cos(a) * cos(c))/(sin(a) * sin(c)))
   # See if 
-  if(e$lon - s$lon > 0){
-    if(abs(e$lon - s$lon) > pi){ # s is right of e
+  if(e$lon - s$lon > 0)
+  {
+    if(abs(e$lon - s$lon) > pi) # s is right of e
       B <- 2*pi - B
-    }else{  # s is left of e
+    else  # s is left of e
       C <- 2*pi - C
-    }
-  }else{
-    if(abs(e$lon - s$lon) > pi){ # s is left of e
+  }else
+  {
+    if(abs(e$lon - s$lon) > pi) # s is left of e
       C <- 2*pi - C
-    }else{  # s is right of e
+    else  # s is right of e
       B <- 2*pi - B
-    }
   }
   
   # Now calculate the lats/lons of the path

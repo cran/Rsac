@@ -55,7 +55,7 @@
     in volts; IACC=Acceleration in nm/sec/sec).}
   \item{iztype}{Reference time equivalence (IUNKN=Unknown; IB=Begin
     time; IDAY=Midnight of refernece GMT day; IO=Event origin time;
-    IA=First arrival time; ITn=User defined time pick n).}
+    IA=First arrival time; ITn=User defined time pick n, n=0,9).}
   \item{leven}{TRUE if data is evenly spaced.}
   \item{lpspol}{TRUE if station components have a positive polarity (left-hand rule).}
   \item{kstnm}{Station name.}

@@ -5,12 +5,12 @@
   Plots the power spectrum of each SAC file.
 }
 \usage{
-spect(s, log = "", \ldots)
+spect(s, log = "", ...)
 }
 \arguments{
   \item{s}{a vector of SAC data.}
   \item{log}{logarithmeic axes.}
-  \item{\ldots}{further graphical parameters. See \code{plot.default}.}
+  \item{...}{further graphical parameters. See \code{plot.default}.}
 }
 \value{an \code{invible} list with the following elements:
   \item{f}{frequency.}

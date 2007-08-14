@@ -1,39 +1,47 @@
-rotate <- function(s, gcp = FALSE, phi = NULL){
+rotate <- function(s, gcp = FALSE, phi = NULL)
+{
   # Only accepts list of length 2:
   if(length(s) != 2)
     stop("Only accepts exactly 2 files.")
   # Must have same station name:
-  getnms <- function(X) X$kstnm
+  getnms <- function(X)
+    X$kstnm
   stnms <- sapply(X = s, getnms)
   if(stnms[1] != stnms[2])
     stop("Componenets must be from the same station (kstnm).")
   # Must have the same sampling rate (but SAC has single precision):
-  getdt <- function(X) X$delta
+  getdt <- function(X)
+    X$delta
   deltas <- sapply(X = s, getdt)
   if(diff(range(deltas)) > 1e-7)
     stop("Components must have the same sampling rate (delta).")
   # Must be horizontal components:
-  getincs <- function(X) X$cmpinc
+  getincs <- function(X)
+    X$cmpinc
   incs <- sapply(X = s, getincs)
   if(!all(incs == 90))
     stop("Componenets must both be horizontal (cmpinc = 90).")
   # Must be orthogonal:
-  getaz <- function(X) X$cmpaz
+  getaz <- function(X)
+    X$cmpaz
   az <- sapply(X = s, getaz) # This is in degrees
   if(abs(diff(az)) - 90 >= 1)
     stop("Components are not an orthogonal pair.")
   # Cut data to times with both components
   s <- sync(s)
   st <- sapply(X = s, fstart)
-  getb <- function(X) X$b
+  getb <- function(X)
+    X$b
   bs <- sapply(X = s, getb)
-  getnpts <- function(X) X$npts
+  getnpts <- function(X)
+    X$npts
   npts <- sapply(X = s, getnpts)
   num2start <- round((max(bs) - bs)/deltas[1], 0) + 1
   adjnpts <- min(npts - num2start)
   if(adjnpts < 1)
     stop("Components do not overlap in time.")
-  if(gcp){
+  if(gcp)
+  {
     # Need stla, stlo, evla, evlo to calc back azimuth
     stla <- NA; stlo <- NA; evla <- NA; evlo <- NA
     if(is.na(s[[1]]$stla)) stla <- s[[2]]$stla
@@ -78,7 +86,8 @@ rotate <- function(s, gcp = FALSE, phi = NULL){
     s[[1]]$x <- - Vrot[ , 1]
     # Tangential component
     s[[2]]$x <- - Vrot[ , 2]
-  }else{
+  }else
+  {
     if(is.null(phi))
       stop("If gcp == FALSE, must provide phi.")
     phi <- phi * pi/180
@@ -94,20 +103,3 @@ rotate <- function(s, gcp = FALSE, phi = NULL){
   s[[1]]$b <- max(bs); s[[2]]$b <- max(bs)
   return(s)
 }
-
-
-# x1 <- c(1  , 0  )
-# x2 <- c(0  , 1  )
-# x3 <- c(0.5, 0.5)
-# x <- rbind(x1, x2, x3)
-
-# plot(x[,1], x[,2], pch = 16, col = "red",
-#      xlim = c(-1, 1), ylim = c(-1, 1))
-
-# B <- 10 * pi/180
-
-# Rmat <- rbind(c( cos(-B),-sin(-B)),
-#               c( sin(-B), cos(-B)))
-# xrot <- t(Rmat %*% t(x))
-
-# points(xrot[,1], xrot[,2], pch = 16, col = "blue")

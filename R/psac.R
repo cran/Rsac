@@ -1,4 +1,5 @@
-psac <- function(s, ylim = NULL, lty = NULL, col = NULL, ...){
+psac <- function(s, ylim = NULL, lty = NULL, col = NULL, ...)
+{
   n <- length(s)
   maxes <- sapply(s, maxx)
   mins <- sapply(s, minx)
@@ -10,7 +11,8 @@ psac <- function(s, ylim = NULL, lty = NULL, col = NULL, ...){
     lty <- gl(length = n, n = ceiling(n/6), k = 6)
   if(is.null(ylim))
     ylim <- c(min(mins), max(maxes))
-  for(i in 1:n){
+  for(i in 1:n)
+  {
     x <- s[[i]]$x
     start <- st[i] + s[[i]]$b; deltat <- s[[i]]$delta
     time <- seq(from = start, by = deltat, length = length(x))
@@ -18,7 +20,6 @@ psac <- function(s, ylim = NULL, lty = NULL, col = NULL, ...){
     else lines(time, x, lty = as.numeric(lty[i]), col = col[i])
   }
 }
-
 
 maxx <- function(X) max(X$x)
 minx <- function(X) min(X$x)

@@ -1,15 +1,16 @@
-\name{arithmetic}
+\name{mul}
 \alias{mul}
 \alias{add}
 \alias{pow}
 \title{Some simple arithmetic}
 \description{
-  These are provided as a matter of convience since any R operation can
-  be applied to the vectors of SAC data (see below for examples). These
-  functions apply  basic arithmetic functions to each SAC file in a 
-  vector. The constant may be the same or different for each SAC file.
-  If less constants are given than files in the vector, then the last
-  constant provided is used for the remainder of the files.
+  These are provided as a matter of convience since any R functions can
+  be easily applied to the vectors of SAC data (see below for
+  examples). These functions apply basic arithmetic functions to each
+  SAC data in a vector. The constant may be the same or different for
+  each SAC file. If less constants are given than files in the vector,
+  then the last constant provided is used for the remainder of the
+  files, to be consistent with the behavior of the original SAC code.
 }
 \usage{
 mul(s, c)

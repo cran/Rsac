@@ -1,7 +1,9 @@
-spect <- function(s, log = "", ...){
+spect <- function(s, log = "", ...)
+{
   par(mfrow = c(length(s), 1), xaxs = "r", yaxs = "r")
   spect <- vector(mode = 'list', length = length(s))
-  for(i in 1:length(s)){
+  for(i in 1:length(s))
+  {
     SPS <- 1/s[[i]]$delta
     x <- s[[i]]$x
     # Nyquist Frequency
@@ -29,16 +31,17 @@ spect <- function(s, log = "", ...){
     # DC Component should be unique, thus not multiplied by 2 
     MX[1] <- MX[1]/2
     # If NFFT is odd, the Nyquist is not evaluated
-    if( NFFT %% 2 == 0 ){
+    if( NFFT %% 2 == 0 )
       MX[length(MX)] <- MX[length(MX)]/2
-    }
     # This is an evenly spaced frequency vector with 
     # NumUniquePts points
     f <- ( 0 : (NumUniquePts - 1) ) * 2 * Fn/NFFT
     spect[[i]]$f <- f; spect[[i]]$MX <- MX
     # Generate the plot, title and labels.
-    if(log != "") keep <- f > 0
-    else keep <- rep(TRUE, length(f))
+    if(log != "")
+      keep <- f > 0
+    else
+      keep <- rep(TRUE, length(f))
     f <- f[keep]; MX <- MX[keep]
     plot(f, MX, log = log, ...)
   }

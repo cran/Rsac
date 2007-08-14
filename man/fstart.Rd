@@ -18,8 +18,7 @@ minx(X)
 \value{the max, min, or starting time.
 }
 \author{Eric M. Thompson <eric.thompson@tufts.edu>}
-\seealso{\code{\link{psac}} }
 \examples{
-# Used by psac()
+# Used by \code{psac}
 }
 \keyword{internal}

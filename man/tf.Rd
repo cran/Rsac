@@ -22,8 +22,8 @@ tf(type = "BU", n = 1, rp = NULL, rs = NULL, plots = TRUE, dB = FALSE)
     \code{20*log10(abs(H(s)))}). In this case, the frequency axis is
     logarithmic and only positive frequency is shown.}
 }
-\seealso{\code{\link{pztransfer}}, \code{\link{buttap}},
-  \code{\link{besselap}}, \code{\link{cheb1ap}}, \code{\link{cheb2ap}}
+\seealso{\code{\link{pztransfer}}, \code{\link{butpz}},
+  \code{\link{besselpz}}, \code{\link{cheb1pz}}, \code{\link{cheb2pz}}
 }
 \value{a list containing the poles, zeros, and gain of the transfer
   function.
